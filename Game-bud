@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BudBitcoin Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0b0f0c, #1a1f1d);
+      color: #f1f1f1;
+      text-align: center;
+      padding: 2em;
+    }
+    .container {
+      background: rgba(34, 34, 34, 0.85);
+      padding: 2em;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #16c172;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    button {
+      background: #16c172;
+      border: none;
+      padding: 1em 2em;
+      color: #fff;
+      font-size: 1.2em;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 1em;
+    }
+    button:hover {
+      background: #1de88f;
+    }
+    .strain {
+      font-size: 1.5em;
+      color: #ffdd57;
+      margin-top: 1em;
+    }
+    .footer {
+      margin-top: 2em;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to BudBitcoin Game</h1>
+    <p>Click the button to discover a legendary cannabis strain and support the project!</p>
+    <button onclick="playGame()">Play Now</button>
+    <div class="strain" id="strain"></div>
+    <div class="footer">Waiting for update... Stay tuned!</div>
+  </div>  <script>
+    const strains = [
+      "OG Kush",
+      "White Widow",
+      "Northern Lights",
+      "Blue Dream",
+      "Sour Diesel",
+      "Lemon Haze",
+      "Amnesia Haze",
+      "AK-47",
+      "Girl Scout Cookies",
+      "Pineapple Express"
+    ];
+
+    function playGame() {
+      const chosen = strains[Math.floor(Math.random() * strains.length)];
+      document.getElementById("strain").innerText = `You discovered: ${chosen}!`;
+      // TODO: In future, connect to Web3 and process MATIC transaction here
+    }
+  </script></body>
+</html>
